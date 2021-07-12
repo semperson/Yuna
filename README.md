@@ -6,7 +6,7 @@ Strawberry cupcakes
 2. Install Yuna
 
 ## Compiling
-  - Depends on applist & libGCUniversal
+  - Depends on applist and libGCUniversal
   - You may want to edit the `Makefiles` to suit your theos installation
 
 ## Note
