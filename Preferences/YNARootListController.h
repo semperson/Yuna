@@ -4,7 +4,7 @@
 #import <CepheiPrefs/HBAppearanceSettings.h>
 #import <Cephei/HBPreferences.h>
 #import <Cephei/HBRespringController.h>
-#import <sys/utsname.h>
+#import "WelcomeViewController.h"
 
 @interface YNAAppearanceSettings : HBAppearanceSettings
 @end

@@ -1,5 +1,4 @@
 #import <UIKit/UIKit.h>
-#import <CoreText/CoreText.h>
 #import <EventKit/EventKit.h>
 #import <AppList/AppList.h>
 #import "libpddokdo.h"
@@ -12,7 +11,6 @@ HBPreferences* notesPreferences = nil;
 
 BOOL enabled = NO;
 
-BOOL hasLoadedFonts = NO;
 BOOL shouldAnimateIn = YES;
 int availableEvents = 0;
 int availableReminders = 0;

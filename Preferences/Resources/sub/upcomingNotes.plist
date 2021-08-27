@@ -22,8 +22,6 @@
 			<string>showIcons</string>
 			<key>label</key>
 			<string>Show icons next to headers</string>
-			<key>PostNotification</key>
-			<string>love.litten.yunapreferences/ReloadPrefs</string>
 		</dict>
 
 		<dict>
@@ -55,8 +53,6 @@
 			<true/>
 			<key>isSegmented</key>
 			<false/>
-			<key>PostNotification</key>
-			<string>love.litten.yunapreferences/ReloadPrefs</string>
 		</dict>
 		<dict>
 			<key>cell</key>
@@ -81,8 +77,6 @@
 			<true/>
 			<key>isSegmented</key>
 			<false/>
-			<key>PostNotification</key>
-			<string>love.litten.yunapreferences/ReloadPrefs</string>
 		</dict>
 
 		<dict>
@@ -112,8 +106,6 @@
 			</array>
 			<key>alignment</key>
 			<string>2</string>
-			<key>PostNotification</key>
-			<string>love.litten.yunapreferences/ReloadPrefs</string>
 		</dict>
 
 		<dict>
@@ -133,8 +125,6 @@
 			<string>showEvents</string>
 			<key>label</key>
 			<string>Show events</string>
-			<key>PostNotification</key>
-			<string>love.litten.yunapreferences/ReloadPrefs</string>
 		</dict>
 		<dict>
 			<key>cell</key>
@@ -147,8 +137,6 @@
 			<string>showReminders</string>
 			<key>label</key>
 			<string>Show reminders</string>
-			<key>PostNotification</key>
-			<string>love.litten.yunapreferences/ReloadPrefs</string>
 		</dict>
 		<dict>
 			<key>cell</key>
@@ -161,8 +149,6 @@
 			<string>showAlarms</string>
 			<key>label</key>
 			<string>Show alarms</string>
-			<key>PostNotification</key>
-			<string>love.litten.yunapreferences/ReloadPrefs</string>
 		</dict>
 
 		<dict>
@@ -184,8 +170,6 @@
 			<string>Title:</string>
 			<key>key</key>
 			<string>upcomingHeaderTitle</string>
-			<key>PostNotification</key>
-			<string>love.litten.yunapreferences/ReloadPrefs</string>
 		</dict>
 		<dict>
 			<key>cell</key>
@@ -228,8 +212,6 @@
 			<true/>
 			<key>segmentCount</key>
 			<real>18</real>
-			<key>PostNotification</key>
-			<string>love.litten.yunapreferences/ReloadPrefs</string>
 		</dict>
 
 		<dict>
@@ -251,8 +233,6 @@
 			<string>Title:</string>
 			<key>key</key>
 			<string>eventsTitle</string>
-			<key>PostNotification</key>
-			<string>love.litten.yunapreferences/ReloadPrefs</string>
 		</dict>
 		<dict>
 			<key>cellClass</key>
@@ -271,8 +251,6 @@
 			<real>1</real>
 			<key>singularLabel</key>
 			<string>Include events from within 1 day</string>
-			<key>PostNotification</key>
-			<string>love.litten.yunapreferences/ReloadPrefs</string>
 		</dict>
 		<dict>
 			<key>cellClass</key>
@@ -291,8 +269,6 @@
 			<real>1</real>
 			<key>singularLabel</key>
 			<string>List 1 event</string>
-			<key>PostNotification</key>
-			<string>love.litten.yunapreferences/ReloadPrefs</string>
 		</dict>
 		<dict>
 			<key>cell</key>
@@ -351,8 +327,6 @@
 			<true/>
 			<key>segmentCount</key>
 			<real>18</real>
-			<key>PostNotification</key>
-			<string>love.litten.yunapreferences/ReloadPrefs</string>
 		</dict>
 		<dict>
 			<key>cell</key>
@@ -379,8 +353,6 @@
 			<true/>
 			<key>segmentCount</key>
 			<real>18</real>
-			<key>PostNotification</key>
-			<string>love.litten.yunapreferences/ReloadPrefs</string>
 		</dict>
 
 		<dict>
@@ -402,8 +374,6 @@
 			<string>Title:</string>
 			<key>key</key>
 			<string>remindersTitle</string>
-			<key>PostNotification</key>
-			<string>love.litten.yunapreferences/ReloadPrefs</string>
 		</dict>
 		<dict>
 			<key>cellClass</key>
@@ -422,8 +392,6 @@
 			<real>1</real>
 			<key>singularLabel</key>
 			<string>Include reminders from within 1 day</string>
-			<key>PostNotification</key>
-			<string>love.litten.yunapreferences/ReloadPrefs</string>
 		</dict>
 		<dict>
 			<key>cellClass</key>
@@ -442,8 +410,6 @@
 			<real>1</real>
 			<key>singularLabel</key>
 			<string>List 1 reminder</string>
-			<key>PostNotification</key>
-			<string>love.litten.yunapreferences/ReloadPrefs</string>
 		</dict>
 		<dict>
 			<key>cell</key>
@@ -502,8 +468,6 @@
 			<true/>
 			<key>segmentCount</key>
 			<real>18</real>
-			<key>PostNotification</key>
-			<string>love.litten.yunapreferences/ReloadPrefs</string>
 		</dict>
 		<dict>
 			<key>cell</key>
@@ -530,8 +494,6 @@
 			<true/>
 			<key>segmentCount</key>
 			<real>18</real>
-			<key>PostNotification</key>
-			<string>love.litten.yunapreferences/ReloadPrefs</string>
 		</dict>
 
 		<dict>
@@ -553,8 +515,6 @@
 			<string>Title:</string>
 			<key>key</key>
 			<string>alarmsTitle</string>
-			<key>PostNotification</key>
-			<string>love.litten.yunapreferences/ReloadPrefs</string>
 		</dict>
 		<dict>
 			<key>cellClass</key>
@@ -573,8 +533,6 @@
 			<real>1</real>
 			<key>singularLabel</key>
 			<string>List 1 alarm</string>
-			<key>PostNotification</key>
-			<string>love.litten.yunapreferences/ReloadPrefs</string>
 		</dict>
 		<dict>
 			<key>cell</key>
@@ -633,8 +591,6 @@
 			<true/>
 			<key>segmentCount</key>
 			<real>18</real>
-			<key>PostNotification</key>
-			<string>love.litten.yunapreferences/ReloadPrefs</string>
 		</dict>
 		<dict>
 			<key>cell</key>
@@ -661,8 +617,6 @@
 			<true/>
 			<key>segmentCount</key>
 			<real>18</real>
-			<key>PostNotification</key>
-			<string>love.litten.yunapreferences/ReloadPrefs</string>
 		</dict>
 
 		<dict>
@@ -682,8 +636,6 @@
 			<string>showNotes</string>
 			<key>label</key>
 			<string>Show notes</string>
-			<key>PostNotification</key>
-			<string>love.litten.yunapreferences/ReloadPrefs</string>
 		</dict>
 
 		<dict>
@@ -705,8 +657,6 @@
 			<string>Title:</string>
 			<key>key</key>
 			<string>notesHeaderTitle</string>
-			<key>PostNotification</key>
-			<string>love.litten.yunapreferences/ReloadPrefs</string>
 		</dict>
 		<dict>
 			<key>cell</key>
@@ -749,8 +699,6 @@
 			<true/>
 			<key>segmentCount</key>
 			<real>18</real>
-			<key>PostNotification</key>
-			<string>love.litten.yunapreferences/ReloadPrefs</string>
 		</dict>
 
 		<dict>
@@ -800,8 +748,6 @@
 			<true/>
 			<key>segmentCount</key>
 			<real>18</real>
-			<key>PostNotification</key>
-			<string>love.litten.yunapreferences/ReloadPrefs</string>
 		</dict>
 
 	</array>

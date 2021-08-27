@@ -32,9 +32,9 @@
  			<key>label</key>
  			<string>Upcoming and notes</string>
  			<key>detail</key>
- 			<string>YNAUpcomingNotesSubPrefsListController</string>
+ 			<string>YNAUpcomingNotesSubPreferencesListController</string>
  			<key>YNASub</key>
- 			<string>upcomingNotesSub</string>
+ 			<string>sub/upcomingNotes</string>
  		</dict>
 		<dict>
  			<key>cell</key>
@@ -42,16 +42,16 @@
  			<key>label</key>
  			<string>Weather</string>
  			<key>detail</key>
- 			<string>YNAWeatherSubPrefsListController</string>
+ 			<string>YNAWeatherSubPreferencesListController</string>
  			<key>YNASub</key>
- 			<string>weatherSub</string>
+ 			<string>sub/weather</string>
  		</dict>
 
 		<dict>
 			<key>cell</key>
 			<string>PSGroupCell</string>
 			<key>label</key>
-			<string>Other options</string>
+			<string>Other Options</string>
 		</dict>
 		<dict>
 			<key>cell</key>
@@ -65,7 +65,7 @@
 			<key>cell</key>
 			<string>PSButtonCell</string>
 			<key>label</key>
-			<string>Reset preferences</string>
+			<string>Reset Preferences</string>
 			<key>action</key>
 			<string>resetPrompt</string>
 		</dict>
@@ -82,9 +82,9 @@
  			<key>label</key>
  			<string>Contributors</string>
  			<key>detail</key>
- 			<string>YNAContributorsSubPrefsListController</string>
+ 			<string>YNAContributorsSubPreferencesListController</string>
  			<key>YNASub</key>
- 			<string>contributorsSub</string>
+ 			<string>sub/contributors</string>
  		</dict>
 
 		<dict>
@@ -122,7 +122,7 @@
 			<key>cell</key>
 			<string>PSGroupCell</string>
 			<key>footerText</key>
-			<string>Yuna by Litten, icon and banner by taki</string>
+			<string>Yuna by Litten, Icon and Banner by taki</string>
 			<key>isStaticText</key>
 			<true/>
 		</dict>
@@ -140,7 +140,7 @@
 			<key>cellClass</key>
 			<string>HBLinkTableCell</string>
 			<key>label</key>
-			<string>Source code</string>
+			<string>Source Code</string>
 			<key>subtitle</key>
 			<string>GitHub 🍃</string>
 			<key>url</key>

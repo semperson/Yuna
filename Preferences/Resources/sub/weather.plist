@@ -22,8 +22,6 @@
 			<string>showWeather</string>
 			<key>label</key>
 			<string>Show weather</string>
-			<key>PostNotification</key>
-			<string>love.litten.yunapreferences/ReloadPrefs</string>
 		</dict>
 
 		<dict>
@@ -55,8 +53,6 @@
 			<true/>
 			<key>isSegmented</key>
 			<false/>
-			<key>PostNotification</key>
-			<string>love.litten.yunapreferences/ReloadPrefs</string>
 		</dict>
 		<dict>
 			<key>cell</key>
@@ -81,8 +77,6 @@
 			<true/>
 			<key>isSegmented</key>
 			<false/>
-			<key>PostNotification</key>
-			<string>love.litten.yunapreferences/ReloadPrefs</string>
 		</dict>
 
 		<dict>
@@ -112,8 +106,6 @@
 			</array>
 			<key>alignment</key>
 			<string>2</string>
-			<key>PostNotification</key>
-			<string>love.litten.yunapreferences/ReloadPrefs</string>
 		</dict>
 
 		<dict>
@@ -163,8 +155,6 @@
 			<true/>
 			<key>segmentCount</key>
 			<real>18</real>
-			<key>PostNotification</key>
-			<string>love.litten.yunapreferences/ReloadPrefs</string>
 		</dict>
 
 		<dict>
@@ -214,8 +204,6 @@
 			<true/>
 			<key>segmentCount</key>
 			<real>18</real>
-			<key>PostNotification</key>
-			<string>love.litten.yunapreferences/ReloadPrefs</string>
 		</dict>
 
 		<dict>
@@ -265,8 +253,6 @@
 			<true/>
 			<key>segmentCount</key>
 			<real>18</real>
-			<key>PostNotification</key>
-			<string>love.litten.yunapreferences/ReloadPrefs</string>
 		</dict>
 
 	</array>

@@ -14,7 +14,7 @@
 
 
     self.enableSwitch = [UISwitch new];
-    [[self enableSwitch] setOnTintColor:[UIColor colorWithRed:0.16 green:0.25 blue:0.19 alpha:1.00]];
+    [[self enableSwitch] setOnTintColor:[UIColor colorWithRed:0.02 green:0.14 blue:0.28 alpha:1]];
     [[self enableSwitch] addTarget:self action:@selector(setEnabled) forControlEvents:UIControlEventTouchUpInside];
 
 
@@ -26,7 +26,7 @@
     self.navigationItem.titleView = [UIView new];
     self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 10, 10)];
     [[self titleLabel] setFont:[UIFont boldSystemFontOfSize:17]];
-    [[self titleLabel] setText:@"1.0.2"];
+    [[self titleLabel] setText:@"1.2.1"];
     [[self titleLabel] setTextColor:[UIColor whiteColor]];
     [[self titleLabel] setTextAlignment:NSTextAlignmentCenter];
     [[[self navigationItem] titleView] addSubview:[self titleLabel]];
@@ -42,8 +42,8 @@
 
     self.iconView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 10, 10)];
     [[self iconView] setContentMode:UIViewContentModeScaleAspectFit];
-    [[self iconView] setImage:[UIImage imageWithContentsOfFile:@"/Library/PreferenceBundles/YunaPrefs.bundle/icon.png"]];
-    [[self iconView] setAlpha:0.0];
+    [[self iconView] setImage:[UIImage imageWithContentsOfFile:@"/Library/PreferenceBundles/YunaPreferences.bundle/icon.png"]];
+    [[self iconView] setAlpha:0];
     [[[self navigationItem] titleView] addSubview:[self iconView]];
 
     self.iconView.translatesAutoresizingMaskIntoConstraints = NO;
@@ -59,10 +59,10 @@
     self.blurView = [[UIVisualEffectView alloc] initWithEffect:[self blur]];
 
 
-    self.headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 200, 300)];
-    self.headerImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 200, 300)];
+    self.headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 200, 200)];
+    self.headerImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 200, 200)];
     [[self headerImageView] setContentMode:UIViewContentModeScaleAspectFill];
-    [[self headerImageView] setImage:[UIImage imageWithContentsOfFile:@"/Library/PreferenceBundles/YunaPrefs.bundle/Banner.png"]];
+    [[self headerImageView] setImage:[UIImage imageWithContentsOfFile:@"/Library/PreferenceBundles/YunaPreferences.bundle/Banner.png"]];
     [[self headerImageView] setClipsToBounds:YES];
     [[self headerView] addSubview:[self headerImageView]];
 
@@ -74,22 +74,6 @@
         [self.headerImageView.bottomAnchor constraintEqualToAnchor:self.headerView.bottomAnchor],
     ]];
 
-    struct utsname systemInfo;
-	uname(&systemInfo);
-    if (![[NSString stringWithCString:systemInfo.machine encoding:NSUTF8StringEncoding] containsString:@"iPad"]) {
-        [[self enableSwitch] setEnabled:NO];
-
-        UIAlertController* alertController = [UIAlertController alertControllerWithTitle:@"Yuna" message:@"This tweak does not support iPhone or iPod" preferredStyle:UIAlertControllerStyleAlert];
-
-        UIAlertAction* confirmAction = [UIAlertAction actionWithTitle:@"Okey" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * action) {
-            [[self navigationController] popViewControllerAnimated:YES];
-        }];
-
-        [alertController addAction:confirmAction];
-
-        [self presentViewController:alertController animated:YES completion:nil];
-    }
-    
     if ([[NSFileManager defaultManager] fileExistsAtPath:@"/Library/MobileSubstrate/DynamicLibraries/Yuna.disabled"]) {
         [[self enableSwitch] setEnabled:NO];
 
@@ -112,6 +96,22 @@
         [alertController addAction:ignoreAction];
 
         [self presentViewController:alertController animated:YES completion:nil];
+    } else if ([[NSFileManager defaultManager] fileExistsAtPath:@"/Library/MobileSubstrate/DynamicLibraries/DayNightSwitch.dylib"]) {
+        UIAlertController* alertController = [UIAlertController alertControllerWithTitle:@"Yuna" message:@"Yuna has detected that you have DayNightSwitch installed, which causes issues with Yuna's preferences\n\n To continue, please disable DayNightSwitch with iCleaner Pro or uninstall it temporarily" preferredStyle:UIAlertControllerStyleAlert];
+
+        UIAlertAction* confirmAction = [UIAlertAction actionWithTitle:@"Okey" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * action) {
+            [[self navigationController] popViewControllerAnimated:YES];
+        }];
+
+        [alertController addAction:confirmAction];
+
+        [self presentViewController:alertController animated:YES completion:nil];
+    } else {
+        if (![[self preferences] objectForKey:@"wasWelcomed"] || ![[[self preferences] objectForKey:@"wasWelcomed"] isEqual:@(YES)]) {
+            WelcomeViewController* controller = [WelcomeViewController new];
+            [self presentViewController:controller animated:YES completion:nil];
+            [[self preferences] setBool:YES forKey:@"wasWelcomed"];
+        }
     }
     
 }
@@ -129,11 +129,11 @@
     [[[[self navigationController] navigationController] navigationBar] setTranslucent:YES];
 
     [[self blurView] setFrame:[[self view] bounds]];
-    [[self blurView] setAlpha:1.0];
+    [[self blurView] setAlpha:1];
     [[self view] addSubview:[self blurView]];
 
-    [UIView animateWithDuration:0.4 delay:0.0 options:UIViewAnimationOptionCurveEaseOut animations:^{
-        [[self blurView] setAlpha:0.0];
+    [UIView animateWithDuration:0.4 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+        [[self blurView] setAlpha:0];
     } completion:nil];
 
 }
@@ -168,13 +168,13 @@
 
     if (offsetY > 200)
         [UIView animateWithDuration:0.2 animations:^{
-            [[self iconView] setAlpha:1.0];
-            [[self titleLabel] setAlpha:0.0];
+            [[self iconView] setAlpha:1];
+            [[self titleLabel] setAlpha:0];
         }];
     else
         [UIView animateWithDuration:0.2 animations:^{
-            [[self iconView] setAlpha:0.0];
-            [[self titleLabel] setAlpha:1.0];
+            [[self iconView] setAlpha:0];
+            [[self titleLabel] setAlpha:1];
         }];
 
 }
@@ -218,7 +218,9 @@
 
 - (void)resetPreferences {
 
-    [[self preferences] removeAllObjects];
+    for (NSString* key in [[self preferences] dictionaryRepresentation]) {
+        if (![key isEqualToString:@"wasWelcomed"]) [[self preferences] removeObjectForKey:key];
+    }
     
     [[self enableSwitch] setOn:NO animated:YES];
     [self respring];
@@ -228,11 +230,11 @@
 - (void)respring {
 
     [[self blurView] setFrame:[[self view] bounds]];
-    [[self blurView] setAlpha:0.0];
+    [[self blurView] setAlpha:0];
     [[self view] addSubview:[self blurView]];
 
-    [UIView animateWithDuration:1.0 delay:0.0 options:UIViewAnimationOptionCurveEaseOut animations:^{
-        [[self blurView] setAlpha:1.0];
+    [UIView animateWithDuration:1 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+        [[self blurView] setAlpha:1];
     } completion:^(BOOL finished) {
         if (![[NSFileManager defaultManager] fileExistsAtPath:@"/Library/MobileSubstrate/DynamicLibraries/shuffle.dylib"])
             [HBRespringController respringAndReturnTo:[NSURL URLWithString:@"prefs:root=Yuna"]];

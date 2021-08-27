@@ -7,7 +7,7 @@
 @interface YNAAppearanceSettings : HBAppearanceSettings
 @end
 
-@interface YNAContributorsSubPrefsListController : HBListController
+@interface YNAContributorsSubPreferencesListController : HBListController
 @property(nonatomic, retain)YNAAppearanceSettings* appearanceSettings;
 @property(nonatomic, retain)UILabel* titleLabel;
 @property(nonatomic, retain)UIBlurEffect* blur;

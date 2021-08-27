@@ -24,34 +24,7 @@
 - (void)viewWillAppear:(BOOL)animated { // add yuna
 
 	%orig;
-
-    if (!hasLoadedFonts) {
-        // load sf pro text semibold font
-        NSData* inData = [NSData dataWithContentsOfURL:[NSURL fileURLWithPath:@"/Library/PreferenceBundles/YunaPrefs.bundle/SF-Pro-Text-Semibold.otf"]];
-        CFErrorRef error;
-        CGDataProviderRef provider = CGDataProviderCreateWithCFData((CFDataRef)inData);
-        CGFontRef font = CGFontCreateWithDataProvider(provider);
-        if (!CTFontManagerRegisterGraphicsFont(font, &error)) {
-            CFStringRef errorDescription = CFErrorCopyDescription(error);
-            CFRelease(errorDescription);
-        }
-        CFRelease(font);
-        CFRelease(provider);
-
-        // load sf pro text medium font
-        NSData* inData2 = [NSData dataWithContentsOfURL:[NSURL fileURLWithPath:@"/Library/PreferenceBundles/YunaPrefs.bundle/SF-Pro-Text-Medium.otf"]];
-        CFErrorRef error2;
-        CGDataProviderRef provider2 = CGDataProviderCreateWithCFData((CFDataRef)inData2);
-        CGFontRef font2 = CGFontCreateWithDataProvider(provider2);
-        if (!CTFontManagerRegisterGraphicsFont(font2, &error2)) {
-            CFStringRef errorDescription2 = CFErrorCopyDescription(error2);
-            CFRelease(errorDescription2);
-        }
-        CFRelease(font2);
-        CFRelease(provider2);
-
-        hasLoadedFonts = YES;
-    }
+    
 
     // yuna view
     if (![self yunaView]) self.yunaView = [UIView new];
@@ -89,7 +62,7 @@
         if (![self upcomingHeaderLabel]) self.upcomingHeaderLabel = [UILabel new];
         [[self upcomingHeaderLabel] setText:upcomingHeaderTitleValue];
         [[self upcomingHeaderLabel] setTextColor:[[GcColorPickerUtils colorWithHex:upcomingHeaderColorValue] colorWithAlphaComponent:[upcomingHeaderAlphaValue doubleValue]]];
-        [[self upcomingHeaderLabel] setFont:[UIFont fontWithName:@"SFProText-Semibold" size:27.5]];
+        [[self upcomingHeaderLabel] setFont:[UIFont systemFontOfSize:27.5 weight:UIFontWeightSemibold]];
         [[self yunaView] addSubview:[self upcomingHeaderLabel]];
         
         [[self upcomingHeaderLabel] setTranslatesAutoresizingMaskIntoConstraints:NO];
@@ -115,7 +88,7 @@
             if (![self eventsTitleLabel]) self.eventsTitleLabel = [UILabel new];
             [[self eventsTitleLabel] setText:eventsTitleValue];
             [[self eventsTitleLabel] setTextColor:[[GcColorPickerUtils colorWithHex:eventsTitleColorValue] colorWithAlphaComponent:[eventsTitleAlphaValue doubleValue]]];
-            [[self eventsTitleLabel] setFont:[UIFont fontWithName:@"SFProText-Medium" size:22.5]];
+            [[self eventsTitleLabel] setFont:[UIFont systemFontOfSize:22.5 weight:UIFontWeightMedium]];
             [[self yunaView] addSubview:[self eventsTitleLabel]];
             
             [[self eventsTitleLabel] setTranslatesAutoresizingMaskIntoConstraints:NO];
@@ -141,7 +114,7 @@
             [[self eventsList] setSelectable:NO];
             [[self eventsList] setBackgroundColor:[UIColor clearColor]];
             [[self eventsList] setTextColor:[[GcColorPickerUtils colorWithHex:eventsListColorValue] colorWithAlphaComponent:[eventsListAlphaValue doubleValue]]];
-            [[self eventsList] setFont:[UIFont fontWithName:@"SFProText-Medium" size:15]];
+            [[self eventsList] setFont:[UIFont systemFontOfSize:15 weight:UIFontWeightMedium]];
             [[self yunaView] addSubview:[self eventsList]];
         
             [[self eventsList] setTranslatesAutoresizingMaskIntoConstraints:NO];
@@ -170,7 +143,7 @@
             if (![self remindersTitleLabel]) self.remindersTitleLabel = [UILabel new];
             [[self remindersTitleLabel] setText:remindersTitleValue];
             [[self remindersTitleLabel] setTextColor:[[GcColorPickerUtils colorWithHex:remindersTitleColorValue] colorWithAlphaComponent:[remindersTitleAlphaValue doubleValue]]];
-            [[self remindersTitleLabel] setFont:[UIFont fontWithName:@"SFProText-Medium" size:22.5]];
+            [[self remindersTitleLabel] setFont:[UIFont systemFontOfSize:22.5 weight:UIFontWeightMedium]];
             [[self yunaView] addSubview:[self remindersTitleLabel]];
             
             [[self remindersTitleLabel] setTranslatesAutoresizingMaskIntoConstraints:NO];
@@ -210,7 +183,7 @@
             [[self remindersList] setSelectable:NO];
             [[self remindersList] setBackgroundColor:[UIColor clearColor]];
             [[self remindersList] setTextColor:[[GcColorPickerUtils colorWithHex:remindersListColorValue] colorWithAlphaComponent:[remindersListAlphaValue doubleValue]]];
-            [[self remindersList] setFont:[UIFont fontWithName:@"SFProText-Medium" size:15]];
+            [[self remindersList] setFont:[UIFont systemFontOfSize:15 weight:UIFontWeightMedium]];
             [[self yunaView] addSubview:[self remindersList]];
         
             [[self remindersList] setTranslatesAutoresizingMaskIntoConstraints:NO];
@@ -239,7 +212,7 @@
             if (![self alarmsTitleLabel]) self.alarmsTitleLabel = [UILabel new];
             [[self alarmsTitleLabel] setText:alarmsTitleValue];
             [[self alarmsTitleLabel] setTextColor:[[GcColorPickerUtils colorWithHex:alarmsTitleColorValue] colorWithAlphaComponent:[alarmsTitleAlphaValue doubleValue]]];
-            [[self alarmsTitleLabel] setFont:[UIFont fontWithName:@"SFProText-Medium" size:22.5]];
+            [[self alarmsTitleLabel] setFont:[UIFont systemFontOfSize:22.5 weight:UIFontWeightMedium]];
             [[self yunaView] addSubview:[self alarmsTitleLabel]];
             
             [[self alarmsTitleLabel] setTranslatesAutoresizingMaskIntoConstraints:NO];
@@ -291,7 +264,7 @@
             [[self alarmsList] setSelectable:NO];
             [[self alarmsList] setBackgroundColor:[UIColor clearColor]];
             [[self alarmsList] setTextColor:[[GcColorPickerUtils colorWithHex:alarmsListColorValue] colorWithAlphaComponent:[alarmsListAlphaValue doubleValue]]];
-            [[self alarmsList] setFont:[UIFont fontWithName:@"SFProText-Medium" size:15]];
+            [[self alarmsList] setFont:[UIFont systemFontOfSize:15 weight:UIFontWeightMedium]];
             [[self yunaView] addSubview:[self alarmsList]];
         
             [[self alarmsList] setTranslatesAutoresizingMaskIntoConstraints:NO];
@@ -345,7 +318,7 @@
         if (![self notesHeaderLabel]) self.notesHeaderLabel = [UILabel new];
         [[self notesHeaderLabel] setText:notesHeaderTitleValue];
         [[self notesHeaderLabel] setTextColor:[[GcColorPickerUtils colorWithHex:notesHeaderColorValue] colorWithAlphaComponent:[notesHeaderAlphaValue doubleValue]]];
-        [[self notesHeaderLabel] setFont:[UIFont fontWithName:@"SFProText-Semibold" size:27.5]];
+        [[self notesHeaderLabel] setFont:[UIFont systemFontOfSize:27.5 weight:UIFontWeightSemibold]];
         [[self yunaView] addSubview:[self notesHeaderLabel]];
         
         [[self notesHeaderLabel] setTranslatesAutoresizingMaskIntoConstraints:NO];
@@ -385,7 +358,7 @@
         [[self notesView] setSelectable:YES];
         [[self notesView] setBackgroundColor:[UIColor clearColor]];
         [[self notesView] setTextColor:[[GcColorPickerUtils colorWithHex:notesTextColorValue] colorWithAlphaComponent:[notesTextAlphaValue doubleValue]]];
-        [[self notesView] setFont:[UIFont fontWithName:@"SFProText-Medium" size:15]];
+        [[self notesView] setFont:[UIFont systemFontOfSize:15 weight:UIFontWeightMedium]];
         [[self notesView] setText:[notesPreferences objectForKey:@"notes"]];
         [[self view] addSubview:[self notesView]];
         
@@ -461,7 +434,7 @@
         // temperature
         if (![self weatherTemperatureLabel]) self.weatherTemperatureLabel = [UILabel new];
         [[self weatherTemperatureLabel] setTextColor:[[GcColorPickerUtils colorWithHex:weatherTemperatureColorValue] colorWithAlphaComponent:[weatherTemperatureAlphaValue doubleValue]]];
-        [[self weatherTemperatureLabel] setFont:[UIFont fontWithName:@"SFProText-Semibold" size:32.5]];
+        [[self weatherTemperatureLabel] setFont:[UIFont systemFontOfSize:32.5 weight:UIFontWeightSemibold]];
         [[self yunaView] addSubview:[self weatherTemperatureLabel]];
             
         [[self weatherTemperatureLabel] setTranslatesAutoresizingMaskIntoConstraints:NO];
@@ -474,7 +447,7 @@
         // condition
         if (![self weatherConditionLabel]) self.weatherConditionLabel = [UILabel new];
         [[self weatherConditionLabel] setTextColor:[[GcColorPickerUtils colorWithHex:weatherConditionColorValue] colorWithAlphaComponent:[weatherConditionAlphaValue doubleValue]]];
-        [[self weatherConditionLabel] setFont:[UIFont fontWithName:@"SFProText-Medium" size:22.5]];
+        [[self weatherConditionLabel] setFont:[UIFont systemFontOfSize:22.5 weight:UIFontWeightMedium]];
         [[self yunaView] addSubview:[self weatherConditionLabel]];
             
         [[self weatherConditionLabel] setTranslatesAutoresizingMaskIntoConstraints:NO];

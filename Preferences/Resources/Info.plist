@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleExecutable</key>
-	<string>YunaPrefs</string>
+	<string>YunaPreferences</string>
 	<key>CFBundleIdentifier</key>
 	<string>love.litten.yunapreferences</string>
 	<key>CFBundleInfoDictionaryVersion</key>
