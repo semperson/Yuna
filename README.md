@@ -10,6 +10,9 @@ Strawberry cupcakes
   - Depends on [AppList](https://github.com/rpetrich/AppList) and [libGCUniversal](https://github.com/MrGcGamer/LibGcUniversalDocumentation)
   - You may want to edit the root `Makefile` to use your Theos SDK and toolchain
 
+## Compatibility
+iPad running iPadOS 13 or later
+
 ## License
 If you take code from this repository please link it, or my [Twitter](https://twitter.com/schneelittchen) to your project<br>
 You may not redistribute this source code or packages from it<br>
