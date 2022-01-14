@@ -1,4 +1,4 @@
-# Yuna
+# Yuna 🍃
 Strawberry cupcakes
 
 ## Installation
